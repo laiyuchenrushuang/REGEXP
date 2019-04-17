@@ -21,8 +21,8 @@ public class Text {
 				           "^(?:(?:1[0-9][0-9]\\.)|(?:2[0-4][0-9]\\.)|(?:25[0-5]\\.)|(?:[1-9][0-9]\\.)|(?:[0-9]\\.)){3}(?:(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5])|(?:[1-9][0-9])|(?:[0-9]))$",//IP地址
 				           "^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$",//车牌号正则
 				           "([0-1][0-9]\\:|2[0-3]\\:)([0-5][0-9]\\:)[0-5][0-9]",//匹配时间
-				           "",
-				           "",
+				           "[^\\x00-\\xff]{0,}\\:",//中文
+				           "[0-9]{0,}",//匹配數字
 				           "",
 		};
 		macherString(regEx[0],"tony@erene.com.com");
@@ -39,8 +39,8 @@ public class Text {
 		macherString(regEx[11], "192.168.1.10");
 		macherString(regEx[12], "川A225KB");
 		macherString(regEx[13], "18:06:00");
-		
-		
+		macherString(regEx[14], "拉了:");
+		macherString(regEx[15], "1212135");
 	}
 
 	private static void macherString(String regEx, String matherString) {
